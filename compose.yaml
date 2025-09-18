@@ -11,7 +11,7 @@ services:
     labels:
       # Habilita o Traefik para este serviço
       - "traefik.enable=true" # --- Roteador principal para HTTPS ---
-      - "traefik.http.routers.daven-iori-frontend.rule=Host(`loja.techrocket.site`) || Host(`daveniori.com.br`)"
+      - "traefik.http.routers.daven-iori-frontend.rule=Host(`loja.techrocket.site`)"
       - "traefik.http.routers.daven-iori-frontend.service=daven-iori-frontend"
       - "traefik.http.routers.daven-iori-frontend.entrypoints=websecure"
       - "traefik.http.routers.daven-iori-frontend.tls=true"
