@@ -1,0 +1,47 @@
+# Nome do Workflow
+name: CI/CD - Build and Deploy to Portainer
+
+# Gatilho (trigger): Este workflow roda sempre que houver um push na branch 'main'
+on:
+  push:
+    branches: ["master"]
+
+# Tarefas (jobs) que serão executadas
+jobs:
+  build-and-deploy:
+    # A máquina virtual que será usada para rodar o job
+    runs-on: ubuntu-latest
+
+    # Passos (steps) a serem executados no job
+    steps:
+      # 1. Clona o código do repositório para a máquina virtual
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Faz login no Docker Hub usando os secrets configurados
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      # 3. Extrai metadados (como tags) para a imagem Docker
+      - name: Extract metadata for Docker
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ secrets.DOCKERHUB_USERNAME }}/daven-iori-frontend
+
+      # 4. Constrói a imagem Docker e a envia para o Docker Hub
+      # A imagem será tagueada como 'latest' e também com o hash do commit
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+      # 5. Aciona o webhook do Portainer para fazer o redeploy
+      - name: Trigger Portainer Webhook
+        run: curl -X POST ${{ secrets.PORTAINER_WEBHOOK_URL }}
