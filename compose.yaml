@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  daven-iori-frontend:
+    image: daven-iori-frontend:latest
+    container_name: daven-iori-frontend
+    build: .
+    restart: unless-stopped
+    networks:
+      - web
+    labels:
+      # Habilita o Traefik para este serviço
+      - "traefik.enable=true" # --- Roteador principal para HTTPS ---
+      - "traefik.http.routers.daveniori-websecure.rule=Host(`daveniori.com.br`)"
+      - "traefik.http.routers.daveniori-websecure.entrypoints=websecure"
+      - "traefik.http.routers.daveniori-websecure.tls=true"
+      - "traefik.http.routers.daveniori-websecure.tls.certresolver=lets-encrypt"
+
+      # --- Serviço (aponta para a porta interna do contêiner) ---
+      - "traefik.http.services.daveniori-service.loadbalancer.server.port=80"
+
+networks:
+  web:
+    external: true
