@@ -64,7 +64,7 @@
         font-family: 'Playfair Display', serif;
         font-size: 3.8rem;
         font-weight: 700;
-        color: #AE9249;
+        color: #CFB53B;
         margin: 0;
         letter-spacing: 1px;
     }
