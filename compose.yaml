@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   daven-iori-frontend:
-    image: daven-iori-frontend:latest
+    image: davs933/daven-iori-frontend:latest
     container_name: daven-iori-frontend
     build: .
     restart: unless-stopped
