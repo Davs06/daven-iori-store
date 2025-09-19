@@ -7,6 +7,10 @@ RUN npm install
 COPY . .
 RUN npm run build
 
+# --- ADICIONE ESTA LINHA PARA DEBUG ---
+# Lista o conteúdo da pasta 'build' para vermos o que foi gerado
+RUN ls -la /app/build   
+
 # Estágio 2: Servir a aplicação com Nginx
 FROM nginx:1.25-alpine
 # Copia os arquivos estáticos gerados no estágio de build
