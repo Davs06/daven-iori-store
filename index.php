@@ -6,13 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daven & Iori - Em Breve</title>
     <style>
-    /* Importa as fontes do Google: Playfair Display para elegância e Montserrat para legibilidade */
+    /* Importa as fontes do Google */
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+
+    /* --- Estilo da Seleção de Texto --- */
+    ::selection,
+    ::-moz-selection {
+        background-color: #9B59B6;
+        color: #ffffff;
+    }
 
     body {
         margin: 0;
+        padding: 1rem;
+        /* Adiciona um respiro nas bordas da tela */
+        box-sizing: border-box;
+        /* Garante que o padding não cause overflow */
         background-color: #12121a;
-        /* Cor de fundo original */
         color: #e0e0e0;
         display: flex;
         justify-content: center;
@@ -22,34 +32,27 @@
         font-family: 'Montserrat', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-
-        /* --- NOVAS PROPRIEDADES PARA O BACKGROUND --- */
-        background-image: url('background.png');
-        /* Aponta para a imagem */
+        background-image: url('background.jpg');
         background-size: cover;
-        /* Faz a imagem cobrir todo o fundo */
         background-position: center;
-        /* Centraliza a imagem */
         background-repeat: no-repeat;
-        /* Evita que a imagem se repita */
-        /* Fundo escuro com uma tonalidade mais escura para que o texto se destaque e a imagem seja sutil */
         background-color: rgba(18, 18, 26, 0.85);
-        /* Aplica uma cor sobreposta à imagem */
         background-blend-mode: multiply;
-        /* Mistura a cor com a imagem para escurecer */
-        /* --- FIM DAS NOVAS PROPRIEDADES --- */
     }
 
     .container {
+        width: 100%;
+        /* Ocupa 100% do espaço disponível */
         max-width: 600px;
+        /* Mas não passa de 600px em telas grandes */
         padding: 3rem;
-        /* Fundo do container agora é mais translúcido para que a imagem apareça por trás */
         background: rgba(28, 28, 43, 0.9);
-        /* Usando rgba para transparência */
         border-radius: 10px;
         box-shadow: 0 5px 35px rgba(155, 89, 182, 0.2);
         border: 1px solid rgba(255, 255, 255, 0.1);
         transition: all 0.3s ease;
+        box-sizing: border-box;
+        /* Garante que o padding não cause overflow */
     }
 
     .header h1 {
@@ -101,6 +104,38 @@
         font-size: 0.9rem;
         color: #7f8c8d;
         opacity: 0.7;
+    }
+
+    /* --- REGRAS PARA TELAS MENORES (CELULARES) --- */
+    @media (max-width: 640px) {
+        body {
+            /* Alinha o card no topo em vez de no centro verticalmente */
+            align-items: flex-start;
+            padding-top: 5vh;
+        }
+
+        .container {
+            padding: 2rem 1.5rem;
+            /* Diminui o padding interno */
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            /* Diminui a fonte principal */
+        }
+
+        .main-content h2 {
+            font-size: 1.8rem;
+            /* Diminui a fonte "Em Breve" */
+            letter-spacing: 3px;
+            padding: 8px 18px;
+        }
+
+        .subtitle,
+        .main-content p {
+            font-size: 1rem;
+            /* Ajusta o tamanho do texto do parágrafo */
+        }
     }
     </style>
 </head>
