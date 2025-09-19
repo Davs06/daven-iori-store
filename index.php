@@ -64,9 +64,35 @@
         font-family: 'Playfair Display', serif;
         font-size: 3.8rem;
         font-weight: 700;
-        color: #AE9249;
         margin: 0;
         letter-spacing: 1px;
+
+        /* --- INÍCIO DO EFEITO DOURADO METÁLICO --- */
+
+        /* 1. O gradiente que simula o dourado com brilho e sombra. */
+        background-image: linear-gradient(145deg,
+                #AE9249 0%,
+                /* Sombra do ouro */
+                #FFF8C9 50%,
+                /* Ponto de brilho máximo (ouro claro) */
+                #CFB53B 70%,
+                /* Tom médio do ouro */
+                #AE9249 100%
+                /* Sombra final do ouro */
+            );
+
+        /* 2. Propriedades mágicas que aplicam o fundo ao texto. */
+        -webkit-background-clip: text;
+        /* Para compatibilidade com Chrome/Safari */
+        background-clip: text;
+
+        /* 3. O texto em si fica transparente para que o fundo (gradiente) apareça. */
+        color: transparent;
+
+        /* 4. (Opcional) Uma sombra sutil para dar profundidade e destacar o texto. */
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+
+        /* --- FIM DO EFEITO --- */
     }
 
     .subtitle {
