@@ -37,7 +37,7 @@
         font-family: 'Montserrat', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        background-image: url('background.jpg');
+        background-image: url('background.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
