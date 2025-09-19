@@ -108,7 +108,7 @@
 <body>
     <div class="container">
         <header class="header">
-            <h1>daven e iori</h1>
+            <h1>Daven & Iori</h1>
             <p class="subtitle">Sua nova experiência em moda.</p>
         </header>
         <main class="main-content">
@@ -116,7 +116,7 @@
             <p>Estamos preparando algo incrível para você. Nosso site está em construção, mas em breve estará no ar!</p>
         </main>
         <footer class="footer">
-            <p>&copy; <?php echo date("Y"); ?> daven e iori. Todos os direitos reservados.</p>
+            <p>&copy; <?php echo date("Y"); ?> Daven & Iori. Todos os direitos reservados.</p>
         </footer>
     </div>
 </body>
