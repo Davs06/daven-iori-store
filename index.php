@@ -181,6 +181,7 @@
             <h2>EM BREVE</h2>
             <p>Estamos preparando algo incrível para você. Nosso site está em construção, mas em breve estará no ar!</p>
         </main>
+        <img src="./logo-DeI.png" alt="logo daven e iori" style="width:5rem; margin: 0;  padding: 0; ">
         <footer class="footer">
             <p>&copy; <?php echo date("Y"); ?> Daven & Iori. Todos os direitos reservados.</p>
         </footer>
