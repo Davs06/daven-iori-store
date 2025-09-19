@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daven & Iori - Em Breve</title>
+    <style>
+        /* Importa as fontes do Google: Playfair Display para elegância e Montserrat para legibilidade */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+
+        body {
+            margin: 0;
+            /* Fundo escuro com um tom azulado profundo */
+            background-color: #12121a;
+            color: #e0e0e0;
+            /* Cor de texto principal clara para contraste */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            /* A fonte base continua sendo moderna e limpa */
+            font-family: 'Montserrat', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 3rem;
+            /* Um fundo um pouco mais claro que o body para criar profundidade */
+            background: #1c1c2b;
+            border-radius: 10px;
+            /* Sombra roxa sutil para um efeito de "brilho" elegante */
+            box-shadow: 0 5px 35px rgba(155, 89, 182, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .header h1 {
+            /* Fonte elegante para o nome da loja */
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            /* Branco puro para destaque máximo */
+            margin: 0;
+            letter-spacing: 1px;
+            /* Espaçamento para um ar mais refinado */
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            /* Um tom de lavanda suave para o subtítulo */
+            color: #a98fc1;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .main-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            /* Cor de destaque principal: um roxo vibrante */
+            color: #9B59B6;
+            letter-spacing: 5px;
+            /* Espaçamento acentuado para um visual premium */
+            border: 2px solid #9B59B6;
+            padding: 10px 25px;
+            display: inline-block;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            /* Deixa o "Em Breve" mais impactante */
+            transition: all 0.4s ease;
+            /* Transição suave para o efeito hover */
+        }
+
+        .main-content h2:hover {
+            background-color: #9B59B6;
+            color: #ffffff;
+            box-shadow: 0 0 25px rgba(155, 89, 182, 0.6);
+            transform: scale(1.05);
+        }
+
+        .main-content p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #bdc3c7;
+            /* Um cinza um pouco mais suave que o texto principal */
+        }
+
+        .footer {
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            /* Cinza sutil para informações secundárias */
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Daven & Iori</h1>
+            <p class="subtitle">Sua nova experiência em moda.</p>
+        </header>
+        <main class="main-content">
+            <h2>EM BREVE</h2>
+            <p>Estamos preparando algo incrível para você. Nosso site está em construção, mas em breve estará no ar!</p>
+        </main>
+        <footer class="footer">
+            <p>&copy; <?php echo date("Y"); ?> daven e iori. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

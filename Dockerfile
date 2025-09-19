@@ -1,23 +1,5 @@
-# Estágio 1: Build da aplicação React
-FROM node:18-alpine AS builder
-WORKDIR /app
-COPY package.json ./
-COPY package-lock.json ./
-RUN npm install
-COPY . .
-RUN npm run build
+# Usa a imagem oficial do PHP 8.3 com o servidor Apache já configurado.
+FROM php:8.3-apache
 
-# --- ADICIONE ESTA LINHA PARA DEBUG ---
-# Lista o conteúdo da pasta 'build' para vermos o que foi gerado
-RUN ls -la /app/build   
-
-# Estágio 2: Servir a aplicação com Nginx
-FROM nginx:1.25-alpine
-# Copia os arquivos estáticos gerados no estágio de build
-COPY --from=builder /app/build /usr/share/nginx/html
-# Remove a configuração padrão do Nginx
-RUN rm /etc/nginx/conf.d/default.conf
-# Copia nossa configuração personalizada do Nginx
-COPY nginx.conf /etc/nginx/conf.d
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+# Copia o nosso arquivo index.php para a pasta raiz do servidor web dentro do contêiner.
+COPY index.php /var/www/html/
