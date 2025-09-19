@@ -9,3 +9,4 @@ COPY background.png /var/www/html/
 # --- NOVAS LINHAS: Copia os arquivos de ícone. ---
 COPY favicon.ico /var/www/html/
 COPY apple-touch-icon.png /var/www/html/
+COPY logo-DeI.png /var/www/html/
