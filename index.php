@@ -149,7 +149,7 @@
     <div class="container">
         <header class="header">
             <h1>Daven & Iori</h1>
-            <p class="subtitle">Sua nova experiência em moda.</p>
+            <p class="subtitle">Estilo diário, elegância universal.</p>
         </header>
         <main class="main-content">
             <h2>EM BREVE</h2>
