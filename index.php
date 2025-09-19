@@ -17,7 +17,7 @@
     /* --- Estilo da Seleção de Texto --- */
     ::selection,
     ::-moz-selection {
-        background-color: #9B59B6;
+        background-color: #e1a1faff;
         color: #ffffff;
     }
 
