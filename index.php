@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daven & Iori - Em Breve</title>
 
-    <link rel="icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest">
 
 
     <style>
@@ -17,16 +18,15 @@
     /* --- Estilo da Seleção de Texto --- */
     ::selection,
     ::-moz-selection {
-        background-color: #e1a1faff;
+        background-color: #4A0E4A;
+        /* Tom de Roxo Profundo da sua paleta */
         color: #ffffff;
     }
 
     body {
         margin: 0;
         padding: 1rem;
-        /* Adiciona um respiro nas bordas da tela */
         box-sizing: border-box;
-        /* Garante que o padding não cause overflow */
         background-color: #12121a;
         color: #e0e0e0;
         display: flex;
@@ -47,18 +47,43 @@
 
     .container {
         width: 100%;
-        /* Ocupa 100% do espaço disponível */
         max-width: 600px;
-        /* Mas não passa de 600px em telas grandes */
-        padding: 3rem;
         background: rgba(28, 28, 43, 0.9);
         border-radius: 10px;
-        box-shadow: 0 5px 35px rgba(155, 89, 182, 0.2);
+        box-shadow: 0 5px 35px rgba(0, 0, 0, 0.3);
         border: 1px solid rgba(255, 255, 255, 0.1);
         transition: all 0.3s ease;
         box-sizing: border-box;
-        /* Garante que o padding não cause overflow */
+
+        /* --- ALTERAÇÕES PARA O LOGO FLUTUANTE --- */
+        position: relative;
+        /* Essencial para o posicionamento do logo */
+        margin-top: 60px;
+        /* Garante espaço para a parte do logo que fica para fora */
+        padding: 3rem;
+        padding-top: 80px;
+        /* Aumenta o padding superior para o conteúdo não ficar atrás do logo */
     }
+
+    /* --- NOVA REGRA PARA O LOGO FLUTUANTE --- */
+    .logo {
+        width: 100px;
+        /* Tamanho do logo */
+        height: 100px;
+        border-radius: 50%;
+        /* Garante que a imagem e a borda sejam perfeitamente redondas */
+        border: 4px solid #1c1c2b;
+        /* Cria uma borda com a cor do card para um acabamento melhor */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+        /* A mágica do posicionamento */
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Puxa o logo para cima e para a esquerda para centralizá-lo na borda */
+    }
+
 
     .header h1 {
         font-family: 'Playfair Display', serif;
@@ -66,49 +91,35 @@
         font-weight: 700;
         margin: 0;
         letter-spacing: 1px;
-
-        /* --- INÍCIO DO EFEITO DOURADO METÁLICO --- */
-
-        /* 1. O gradiente que simula o dourado com brilho e sombra. */
         background-image: linear-gradient(145deg,
                 #AE9249 0%,
-                /* Sombra do ouro */
                 #FFF8C9 50%,
-                /* Ponto de brilho máximo (ouro claro) */
                 #CFB53B 70%,
-                /* Tom médio do ouro */
-                #AE9249 100%
-                /* Sombra final do ouro */
-            );
-
-        /* 2. Propriedades mágicas que aplicam o fundo ao texto. */
+                #AE9249 100%);
         -webkit-background-clip: text;
-        /* Para compatibilidade com Chrome/Safari */
         background-clip: text;
-
-        /* 3. O texto em si fica transparente para que o fundo (gradiente) apareça. */
         color: transparent;
-
-        /* 4. (Opcional) Uma sombra sutil para dar profundidade e destacar o texto. */
         text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-
-        /* --- FIM DO EFEITO --- */
     }
 
     .subtitle {
         font-size: 1.2rem;
         font-weight: 300;
         color: #a98fc1;
+        opacity: 0.8;
+        margin-top: 0.5rem;
         margin-bottom: 3rem;
-        opacity: 0.9;
     }
 
     .main-content h2 {
         font-size: 2.5rem;
         font-weight: 700;
-        color: #9B59B6;
+        color: #CFB53B;
+        /* Cor dourada sólida, como solicitado */
+        background-color: transparent;
+        /* Garante que não haja cor de fundo */
         letter-spacing: 5px;
-        border: 2px solid #9B59B6;
+        border: 2px solid #CFB53B;
         padding: 10px 25px;
         display: inline-block;
         border-radius: 5px;
@@ -118,9 +129,19 @@
     }
 
     .main-content h2:hover {
-        background-color: #9B59B6;
-        color: #ffffff;
-        box-shadow: 0 0 25px rgba(155, 89, 182, 0.6);
+        /* Efeito de gradiente metálico aplicado no hover */
+        background-image: linear-gradient(145deg,
+                #AE9249 0%,
+                #FFF8C9 50%,
+                #CFB53B 70%,
+                #AE9249 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+
+        /* Mantém a borda e outros efeitos */
+        border-color: #CFB53B;
+        box-shadow: 0 0 25px rgba(207, 181, 59, 0.4);
         transform: scale(1.05);
     }
 
@@ -140,24 +161,29 @@
     /* --- REGRAS PARA TELAS MENORES (CELULARES) --- */
     @media (max-width: 640px) {
         body {
-            /* Alinha o card no topo em vez de no centro verticalmente */
             align-items: flex-start;
             padding-top: 5vh;
         }
 
         .container {
             padding: 2rem 1.5rem;
-            /* Diminui o padding interno */
+            padding-top: 70px;
+            /* Ajusta o padding do topo para telas menores */
+            margin-top: 50px;
+        }
+
+        .logo {
+            width: 80px;
+            /* Logo um pouco menor no celular */
+            height: 80px;
         }
 
         .header h1 {
             font-size: 2.8rem;
-            /* Diminui a fonte principal */
         }
 
         .main-content h2 {
             font-size: 1.8rem;
-            /* Diminui a fonte "Em Breve" */
             letter-spacing: 3px;
             padding: 8px 18px;
         }
@@ -165,7 +191,6 @@
         .subtitle,
         .main-content p {
             font-size: 1rem;
-            /* Ajusta o tamanho do texto do parágrafo */
         }
     }
     </style>
@@ -173,15 +198,16 @@
 
 <body>
     <div class="container">
+        <img src="logo-DeI.png" alt="Logo Daven & Iori" class="logo">
+
         <header class="header">
             <h1>Daven & Iori</h1>
-            <p class="subtitle">Estilo diário, elegância universal.</p>
+            <p class="subtitle">A elegância em cada detalhe.</p>
         </header>
         <main class="main-content">
             <h2>EM BREVE</h2>
             <p>Estamos preparando algo incrível para você. Nosso site está em construção, mas em breve estará no ar!</p>
         </main>
-        <img src="./logo-DeI.png" alt="logo daven e iori" style="width:5rem; margin: 0;  padding: 0; ">
         <footer class="footer">
             <p>&copy; <?php echo date("Y"); ?> Daven & Iori. Todos os direitos reservados.</p>
         </footer>
