@@ -4,7 +4,6 @@ services:
   daven-iori-frontend:
     image: davs933/daven-iori-frontend:latest
     container_name: daven-iori-frontend
-    build: .
     restart: unless-stopped
     networks:
       - web
