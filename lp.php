@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daven & Iori - Lançamento Exclusivo</title>
 
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" href="assets/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest">
 
     <link rel="stylesheet" href="assets/css/lp.css">
