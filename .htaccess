@@ -1,0 +1,12 @@
+# Ativa o motor de reescrita de URL
+RewriteEngine On
+
+# Garante que o Apache procure por diretórios e arquivos antes de aplicar regras
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Regra para a Landing Page: /lancamento -> lp.php
+RewriteRule ^lancamento/?$ lp.php [L]
+
+# Regra para a página "Em Breve": / (raiz) -> index.php
+RewriteRule ^$ index.php [L]
