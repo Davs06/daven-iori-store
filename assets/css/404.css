@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Garamond:wght@400&display=swap');
+
+:root {
+    --gold: #CFB53B;
+    --deep-purple: #4A0E4A;
+    --off-white: #F5F5F5;
+    --navy-blue: #1A2238;
+}
+
+body {
+    margin: 0;
+    font-family: 'Garamond', serif;
+    background-color: var(--off-white);
+    color: var(--navy-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.container-404 {
+    max-width: 500px;
+}
+
+.container-404 h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem;
+    color: var(--gold);
+    margin: 0;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container-404 h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.container-404 p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.home-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border: 1px solid var(--gold);
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--navy-blue);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: var(--gold);
+    color: var(--off-white);
+    box-shadow: 0 4px 15px rgba(207, 181, 59, 0.4);
+    transform: translateY(-3px);
+}
