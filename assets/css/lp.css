@@ -166,8 +166,19 @@ body {
 }
 
 .signup-form button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(207, 181, 59, 0.4);
+    /* Fundo com gradiente metálico */
+    background-image: linear-gradient(145deg,
+            #AE9249 0%,
+            #FFF8C9 50%,
+            #CFB53B 70%,
+            #AE9249 100%);
+
+    color: var(--navy-blue);
+
+
+    /* Outros efeitos */
+    box-shadow: 0 4px 20px rgba(207, 181, 59, 0.5);
+    transform: translateY(-3px);
 }
 
 .footer {

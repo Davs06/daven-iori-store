@@ -37,17 +37,17 @@
             <h2 class="title">Um Vislumbre da Coleção</h2>
             <div class="collection-grid">
                 <div class="collection-item">
-                    <img src="asstes/img/background.png" alt="Look com suéter e calça">
+                    <img src="assets/img/background.png" alt="Look com suéter e calça">
                     <h3>Essenciais de Luxo</h3>
                     <p>Peças-chave em tecidos nobres que formam a base de um guarda-roupa versátil e sofisticado.</p>
                 </div>
                 <div class="collection-item">
-                    <img src="asstes/img/background.png" alt="Acessórios elegantes">
+                    <img src="assets/img/background.png" alt="Acessórios elegantes">
                     <h3>Acessórios Finos</h3>
                     <p>O toque final que eleva qualquer produção. De joias delicadas a bolsas estruturadas.</p>
                 </div>
                 <div class="collection-item">
-                    <img src="asstes/img/background.png" alt="Vestido de noite">
+                    <img src="assets/img/background.png" alt="Vestido de noite">
                     <h3>Ocasiões Especiais</h3>
                     <p>Silhuetas marcantes e tecidos fluidos para momentos que pedem um brilho extra.</p>
                 </div>
