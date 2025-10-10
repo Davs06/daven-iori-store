@@ -19,7 +19,7 @@
 
         <img src="assets/img/logo-DeI.png" alt="Logo Daven & Iori" class="logo">
 
-        <a href="/" class="store-button">Acessar a Loja</a>
+        <a href="https://daveniori.lojavirtualnuvem.com.br" class="store-button">Acessar a Loja</a>
     </header>
 
     <main>
