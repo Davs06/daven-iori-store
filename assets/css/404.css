@@ -10,7 +10,7 @@
 body {
     margin: 0;
     font-family: 'Garamond', serif;
-    background-color: var(--off-white);
+    background-color: var(--deep-purple);
     color: var(--navy-blue);
     display: flex;
     justify-content: center;
