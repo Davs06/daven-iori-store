@@ -11,7 +11,7 @@ body {
     margin: 0;
     font-family: 'Garamond', serif;
     background-color: var(--deep-purple);
-    color: var(--navy-blue);
+    color: var(--off-white);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,8 +50,8 @@ body {
     padding: 0.8rem 2rem;
     border: 1px solid var(--gold);
     border-radius: 5px;
-    background-color: transparent;
-    color: var(--navy-blue);
+    background-color: var(--gold);
+    color: var(--off-white);
     font-family: 'Playfair Display', serif;
     font-size: 1.1rem;
     text-decoration: none;
@@ -60,8 +60,17 @@ body {
 }
 
 .home-button:hover {
-    background-color: var(--gold);
+    /* Fundo com gradiente metálico */
+    background-image: linear-gradient(145deg,
+            #AE9249 0%,
+            #FFF8C9 50%,
+            #CFB53B 70%,
+            #AE9249 100%);
+
     color: var(--off-white);
-    box-shadow: 0 4px 15px rgba(207, 181, 59, 0.4);
+    /* Texto off-white como solicitado */
+
+    /* Outros efeitos */
+    box-shadow: 0 4px 20px rgba(207, 181, 59, 0.5);
     transform: translateY(-3px);
 }
