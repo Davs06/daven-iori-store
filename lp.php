@@ -66,8 +66,8 @@
             <p>Seja a primeira a saber quando a coleção completa estiver disponível e receba um presente exclusivo de
                 lançamento.</p>
             <form class="signup-form" action="">
-                <input type="email" placeholder="Seu melhor e-mail..." required>
-                <button type="submit">Quero Acesso VIP</button>
+                <input type="email" placeholder="indisponivel" required>
+                <button type="submit" disabled>Em breve</button>
             </form>
         </section>
     </main>
