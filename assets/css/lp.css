@@ -87,7 +87,7 @@ p {
     border-radius: 2px;
     /* Bordas um pouco mais retas para modernidade */
     background-color: var(--gold);
-    color: var(--pure-white);
+    color: var(--navy-blue);
     /* Texto branco no botão dourado fica mais limpo */
     font-family: 'Playfair Display', serif;
     font-size: 1rem;
@@ -100,12 +100,6 @@ p {
 
 .store-button:hover,
 .signup-form button:hover {
-    background-color: var(--pure-white);
-    color: linear-gradient(145deg,
-            #AE9249 0%,
-            #FFF8C9 50%,
-            #CFB53B 70%,
-            #AE9249 100%);
     box-shadow: 0 4px 15px rgba(207, 181, 59, 0.3);
     transform: translateY(-2px);
 }
