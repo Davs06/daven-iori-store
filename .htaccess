@@ -9,7 +9,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
 # Regra para a Landing Page: /lancamento -> lp.php
-RewriteRule ^lancamento/?$ lp.php [L]
+RewriteRule ^lancamento/?$ index.php [L]
 
 # Regra para a página "Em Breve": / (raiz) -> index.php
-RewriteRule ^$ index.php [L]
+RewriteRule ^$ lp.php [L]

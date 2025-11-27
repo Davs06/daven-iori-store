@@ -16,7 +16,7 @@
 
     <header class="header">
         <img src="assets/img/logo-DeI.png" alt="Logo Daven & Iori" class="logo">
-        <a href="/" class="store-button">Visitar a Loja</a>
+        <a href="https://daveniori.lojavirtualnuvem.com.br" class="store-button">Visitar a Loja</a>
     </header>
 
     <main>
@@ -66,7 +66,7 @@
             <p>Seja a primeira a saber quando a coleção completa estiver disponível e receba um presente exclusivo de
                 lançamento.</p>
             <form class="signup-form" action="">
-                <input type="email" placeholder="indisponivel" required>
+                <input type="email" placeholder="Indisponivel no momento..." disabled>
                 <button type="submit" disabled>Em breve</button>
             </form>
         </section>
