@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daven & Iori - Lançamento Exclusivo</title>
-
+    <title>Daven & Iori - A Nova Coleção</title>
     <link rel="icon" href="assets/img/favicon.ico" />
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest">
@@ -16,56 +15,59 @@
 <body>
 
     <header class="header">
-
         <img src="assets/img/logo-DeI.png" alt="Logo Daven & Iori" class="logo">
-
-        <a href="https://daveniori.lojavirtualnuvem.com.br" class="store-button">Acessar a Loja</a>
+        <a href="/" class="store-button">Visitar a Loja</a>
     </header>
 
     <main>
         <section class="hero">
-            <h1>O Futuro da Elegância</h1>
-            <p>Uma nova era de estilo, curada para você. Inscreva-se para acesso antecipado e receba 15% de desconto em
-                sua primeira compra.</p>
+            <h1>Elegância em Cores</h1>
+            <p>Descubra a nova coleção. Fluidez, sofisticação e os tons vibrantes da estação, curados para a mulher
+                moderna.</p>
+            <br>
+            <a href="#cta-signup" class="store-button"
+                style="background-color: transparent; color: var(--navy-blue); border: 2px solid var(--navy-blue);">Garantir
+                Acesso Antecipado</a>
         </section>
 
         <section class="about">
-            <h2 class="title">Nossa Filosofia</h2>
-            <p>Daven & Iori nasceu da crença de que a verdadeira elegância está nos detalhes. Cada peça é selecionada
-                com um olhar apurado para qualidade, design atemporal e a capacidade de transformar o dia a dia. Não
-                vendemos apenas roupas, oferecemos a base para a sua autoexpressão.</p>
+            <h2 class="title">A Essência da Coleção</h2>
+            <p>Nossa nova temporada celebra a feminilidade com uma paleta de cores refrescante e tecidos que abraçam o
+                movimento. Do tom menta suave ao azul vibrante, cada peça é desenhada com detalhes que fazem a
+                diferença, como babados delicados e cortes impecáveis. Perfeito para iluminar o seu dia a dia com
+                sofisticação.</p>
         </section>
 
         <section class="sneak-peek">
-            <h2 class="title">Um Vislumbre da Coleção</h2>
+            <h2 class="title">Destaques da Temporada</h2>
             <div class="collection-grid">
                 <div class="collection-item">
-                    <img src="assets/img/background.png" alt="Look com suéter e calça">
-                    <h3>Essenciais de Luxo</h3>
-                    <p>Peças-chave em tecidos nobres que formam a base de um guarda-roupa versátil e sofisticado.</p>
+                    <img src="assets/img/roupas/bata-gravata-2.png" alt="Blusa de babados cor menta com laço">
+                    <h3>Leveza Menta</h3>
+                    <p>Blusa fluida com gola laço e detalhes em babados. A definição de elegância diurna.</p>
                 </div>
+
                 <div class="collection-item">
-                    <img src="assets/img/background.png" alt="Acessórios elegantes">
-                    <h3>Acessórios Finos</h3>
-                    <p>O toque final que eleva qualquer produção. De joias delicadas a bolsas estruturadas.</p>
+                    <img src="assets/img/roupas/conjunto-colete-1.png" alt="Conjunto de alfaiataria azul claro">
+                    <h3>Alfaiataria Modernaaa</h3>
+                    <p>Conjunto em tom azul céu com corte estruturado e silhueta contemporânea.</p>
                 </div>
+
                 <div class="collection-item">
-                    <img src="assets/img/background.png" alt="Vestido de noite">
-                    <h3>Ocasiões Especiais</h3>
-                    <p>Silhuetas marcantes e tecidos fluidos para momentos que pedem um brilho extra.</p>
+                    <img src="./assets/img/roupas/bata-lapela-1.webp" alt="Blusa amarela fluida com calça terracota">
+                    <h3>Vibração Solar</h3>
+                    <p>A combinação perfeita de tons quentes para iluminar sua produção com sofisticação.</p>
                 </div>
             </div>
         </section>
 
-        <section class="cta">
-            <h2 class="title">Seja o Primeiro a Saber</h2>
-            <p>Junte-se à nossa lista exclusiva e garanta seu desconto de lançamento. A jornada para um estilo
-                inesquecível está prestes a começar.</p>
+        <section class="cta" id="cta-signup">
+            <h2 class="title">Entre para a Lista VIP</h2>
+            <p>Seja a primeira a saber quando a coleção completa estiver disponível e receba um presente exclusivo de
+                lançamento.</p>
             <form class="signup-form" action="">
-                <!-- <input type="email" placeholder="Seu melhor e-mail" required> -->
-                <!-- <button type="submit" disabled>Quero meu desconto</button> -->
-                <input type="email" placeholder="Indisponivel no momento" disabled>
-                <button type="submit" disabled>Em breve!!</button>
+                <input type="email" placeholder="Seu melhor e-mail..." required>
+                <button type="submit">Quero Acesso VIP</button>
             </form>
         </section>
     </main>

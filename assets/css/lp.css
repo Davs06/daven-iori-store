@@ -1,26 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Garamond:wght@400&display=swap');
 
 :root {
+    /* Paleta de Cores Atualizada para "Clean Luxury" */
     --gold: #CFB53B;
-    --deep-purple: #4A0E4A;
-    --off-white: #F5F5F5;
+    /* Mantido */
+    --cream-bg: #FAF9F6;
+    /* Novo fundo principal claro (Off-white quente) */
+    --soft-beige: #F5F0E6;
+    /* Para seções de destaque */
     --navy-blue: #1A2238;
-    --text-light: #E0E0E0;
+    /* Mantido para texto forte */
+    --text-body: #555555;
+    /* Cinza escuro para texto corrido, mais suave */
+    --pure-white: #FFFFFF;
+    --deep-purple: #4A0E4A;
+    /* Mantido apenas se necessário em detalhes menores, mas evitado no geral */
 }
 
 ::selection,
 ::-moz-selection {
-    background-color: var(--deep-purple);
-    color: var(--off-white);
+    background-color: var(--gold);
+    color: var(--pure-white);
 }
 
 body {
     margin: 0;
     font-family: 'Garamond', serif;
-    background-color: var(--off-white);
+    background-color: var(--cream-bg);
+    /* Fundo claro */
     color: var(--navy-blue);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--navy-blue);
+    /* Títulos em azul marinho para contraste elegante */
+}
+
+p {
+    color: var(--text-body);
+    /* Texto corrido num cinza sofisticado */
+    line-height: 1.8;
 }
 
 .header,
@@ -33,247 +57,260 @@ body {
     text-align: center;
 }
 
-/* --- HEADER ATUALIZADO --- */
+/* --- HEADER --- */
 .header {
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
-    /* Alinha os itens nas extremidades */
     align-items: center;
-    background-color: var(--deep-purple);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--pure-white);
+    /* Header branco limpo */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    /* Sombra mais suave */
     position: sticky;
-    /* Mantém o header fixo no topo ao rolar */
     top: 0;
     z-index: 100;
 }
 
 .header .logo {
-    width: 100px;
+    width: 90px;
+    /* Um pouco maior para destaque */
     height: auto;
 }
 
-/* --- ESTILO PARA O NOVO BOTÃO --- */
-.store-button {
+/* --- BOTÕES (Padrão Dourado) --- */
+.store-button,
+.signup-form button {
     display: inline-block;
-    padding: 0.6rem 1.2rem;
+    padding: 0.8rem 1.5rem;
     border: 1px solid var(--gold);
-    border-radius: 5px;
+    border-radius: 2px;
+    /* Bordas um pouco mais retas para modernidade */
     background-color: var(--gold);
-    color: var(--navy-blue);
+    color: var(--pure-white);
+    /* Texto branco no botão dourado fica mais limpo */
     font-family: 'Playfair Display', serif;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 700;
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease;
+    letter-spacing: 0.5px;
 }
 
-.store-button:hover {
-    /* Fundo com gradiente metálico */
-    background-image: linear-gradient(145deg,
+.store-button:hover,
+.signup-form button:hover {
+    background-color: var(--pure-white);
+    color: linear-gradient(145deg,
             #AE9249 0%,
             #FFF8C9 50%,
             #CFB53B 70%,
             #AE9249 100%);
-
-    color: var(--navy-blue);
-
-
-    /* Outros efeitos */
-    box-shadow: 0 4px 20px rgba(207, 181, 59, 0.5);
-    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(207, 181, 59, 0.3);
+    transform: translateY(-2px);
 }
 
+/* --- HERO SECTION (A maior mudança) --- */
 .hero {
-    background-image: linear-gradient(rgba(26, 34, 56, 0.7), rgba(26, 34, 56, 0.7)), url('../../assets/img/background.png');
-    background-size: cover;
-    background-position: center;
-    color: var(--off-white);
+    /* Removemos a imagem escura e usamos um gradiente claro e luxuoso */
+    background: linear-gradient(135deg, var(--cream-bg) 0%, var(--soft-beige) 100%);
     padding: 8rem 2rem;
 }
 
 .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
+    font-size: 4rem;
     color: var(--gold);
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-    margin: 0;
+    /* Título principal em dourado */
+    margin: 0 0 1.5rem 0;
+    /* Sombra de texto removida para um look mais limpo, ou use uma muito suave: */
+    /* text-shadow: 1px 1px 3px rgba(0,0,0,0.1); */
 }
 
 .hero p {
     font-size: 1.5rem;
-    max-width: 600px;
-    margin: 1rem auto 0;
-    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--navy-blue);
+    opacity: 1;
 }
 
+/* --- ABOUT SECTION --- */
 .about {
+    background-color: var(--pure-white);
+}
+
+.title {
+    font-size: 3rem;
+    color: var(--navy-blue);
+    /* Títulos de seção em azul marinho */
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* Adiciona um pequeno detalhe dourado abaixo dos títulos */
+.title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--gold);
+    margin: 1rem auto 0;
+}
+
+.about p {
+    font-size: 1.3rem;
     max-width: 800px;
     margin: 0 auto;
 }
 
-.title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
-}
-
-.about p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
+/* --- SNEAK PEEK (Galeria) --- */
 .sneak-peek {
-    background-color: #fdfdfd;
+    background-color: var(--cream-bg);
+    /* Fundo levemente diferente para contraste */
 }
 
 .collection-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Cards um pouco mais largos */
+    gap: 2.5rem;
     max-width: 1200px;
-    margin: 2rem auto 0;
+    margin: 3rem auto 0;
 }
 
 .collection-item {
-    text-align: left;
+    text-align: center;
+    /* Centralizado fica mais elegante para moda */
+    background: var(--pure-white);
+    padding: 1.5rem;
+    border-radius: 4px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    /* Sombra suave para destacar do fundo */
+    transition: transform 0.3s ease;
+}
+
+.collection-item:hover {
+    transform: translateY(-5px);
 }
 
 .collection-item img {
     width: 100%;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1rem;
+    height: 450px;
+    /* Altura fixa para uniformizar as fotos */
+    object-fit: cover;
+    /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
 }
 
 .collection-item h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    margin: 0 0 0.5rem 0;
+    font-size: 1.6rem;
+    margin: 0 0 0.8rem 0;
+    color: var(--navy-blue);
 }
 
-.collection-item p {
-    margin: 0;
-    line-height: 1.6;
-}
-
+/* --- CTA SECTION (Newsletter) --- */
 .cta {
-    background-color: var(--navy-blue);
-    color: var(--off-white);
+    /* Fundo bege suave para destacar a área de inscrição sem ser pesado */
+    background-color: var(--soft-beige);
+    border-top: 1px solid rgba(207, 181, 59, 0.2);
+}
+
+.cta .title {
+    color: var(--navy-blue);
 }
 
 .cta p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto 2rem;
+    font-size: 1.3rem;
+    max-width: 650px;
+    margin: 0 auto 2.5rem;
+    color: var(--text-body);
 }
 
 .signup-form {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    max-width: 500px;
+    gap: 0.5rem;
+    /* Gap menor para os inputs ficarem juntos */
+    max-width: 550px;
     margin: 0 auto;
 }
 
 .signup-form input {
     flex-grow: 1;
-    padding: 0.8rem 1rem;
-    border: 1px solid var(--gold);
-    border-radius: 5px;
+    padding: 1rem 1.2rem;
+    border: 1px solid #e0e0e0;
+    /* Borda cinza claro */
+    border-radius: 2px;
     font-family: 'Garamond', serif;
     font-size: 1.1rem;
-    background: #fff;
+    background: var(--pure-white);
+    transition: border-color 0.3s ease;
+}
+
+.signup-form input:focus {
+    outline: none;
+    border-color: var(--gold);
 }
 
 .signup-form button {
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--gold);
-    color: var(--navy-blue);
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 2px;
+    padding: 1rem 2rem;
+    /* O estilo base do botão já foi definido acima */
 }
 
-.signup-form button:hover {
-    /* Fundo com gradiente metálico */
-    background-image: linear-gradient(145deg,
-            #AE9249 0%,
-            #FFF8C9 50%,
-            #CFB53B 70%,
-            #AE9249 100%);
-
-    color: var(--navy-blue);
-
-
-    /* Outros efeitos */
-    box-shadow: 0 4px 20px rgba(207, 181, 59, 0.5);
-    transform: translateY(-3px);
-}
-
-/* --- ESTILOS ATUALIZADOS DO FOOTER --- */
+/* --- FOOTER --- */
 .footer {
-    background-color: var(--deep-purple);
-    padding: 3rem 2rem;
-    /* Aumenta o padding para mais respiro */
-    font-size: 0.9rem;
-    color: var(--gold);
+    background-color: var(--pure-white);
+    /* Footer claro */
+    padding: 4rem 2rem;
+    color: var(--navy-blue);
+    /* Texto escuro */
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.footer p {
-    margin-top: 1.5rem;
-    /* Adiciona espaço acima do texto de copyright */
-    opacity: 0.7;
-}
-
-/* --- ESTILOS PARA OS ÍCONES DAS REDES SOCIAIS --- */
 .social-links {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    /* Espaçamento entre os ícones */
+    gap: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 .social-links a {
-    color: var(--gold);
+    color: var(--navy-blue);
+    /* Ícones em azul marinho */
     transition: all 0.3s ease;
 }
 
 .social-links a:hover {
-    color: var(--off-white);
-    /* Muda a cor do ícone no hover */
-    transform: scale(1.2);
-    /* Aumenta o ícone levemente */
+    color: var(--gold);
+    /* Dourado no hover */
+    transform: scale(1.1);
 }
 
 .social-links svg {
-    width: 28px;
-    /* Tamanho dos ícones */
-    height: 28px;
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.5;
+    /* Ícones ligeiramente mais finos e elegantes */
 }
 
-@media (max-width: 600px) {
-    .header .logo {
-        width: 60px;
-    }
+.footer p {
+    font-size: 0.9rem;
+    color: var(--text-body);
+    opacity: 0.8;
+    margin: 0;
+}
 
-    .store-button {
-        padding: 0.5rem 0.8rem;
-        font-size: 0.9rem;
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+    .hero {
+        padding: 5rem 2rem;
     }
 
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     .hero p {
@@ -281,10 +318,35 @@ body {
     }
 
     .title {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
+    }
+
+    .collection-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Uma coluna no mobile */
+    .collection-item img {
+        height: auto;
+        max-height: 500px;
     }
 
     .signup-form {
         flex-direction: column;
+    }
+
+    .signup-form input,
+    .signup-form button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .header .logo {
+        width: 70px;
+    }
+
+    .store-button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
     }
 }
