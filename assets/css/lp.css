@@ -1,20 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Garamond:wght@400&display=swap');
 
 :root {
-    /* Paleta de Cores Atualizada para "Clean Luxury" */
     --gold: #CFB53B;
-    /* Mantido */
     --cream-bg: #FAF9F6;
-    /* Novo fundo principal claro (Off-white quente) */
     --soft-beige: #F5F0E6;
-    /* Para seções de destaque */
     --navy-blue: #1A2238;
-    /* Mantido para texto forte */
     --text-body: #555555;
-    /* Cinza escuro para texto corrido, mais suave */
     --pure-white: #FFFFFF;
     --deep-purple: #4A0E4A;
-    /* Mantido apenas se necessário em detalhes menores, mas evitado no geral */
 }
 
 ::selection,
@@ -23,14 +16,19 @@
     color: var(--pure-white);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: 'Garamond', serif;
     background-color: var(--cream-bg);
-    /* Fundo claro */
     color: var(--navy-blue);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    /* Evita rolagem lateral indesejada pelas animações */
 }
 
 h1,
@@ -38,12 +36,10 @@ h2,
 h3 {
     font-family: 'Playfair Display', serif;
     color: var(--navy-blue);
-    /* Títulos em azul marinho para contraste elegante */
 }
 
 p {
     color: var(--text-body);
-    /* Texto corrido num cinza sofisticado */
     line-height: 1.8;
 }
 
@@ -55,6 +51,20 @@ p {
 .footer {
     padding: 4rem 2rem;
     text-align: center;
+    position: relative;
+    /* Necessário para os elementos gráficos absolutos */
+}
+
+/* --- ANIMAÇÕES DE SCROLL (REVEAL) --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* --- HEADER --- */
@@ -63,19 +73,24 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--pure-white);
-    /* Header branco limpo */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    /* Sombra mais suave */
+    background-color: rgba(255, 255, 255, 0.95);
+    /* Leve transparência */
+    backdrop-filter: blur(5px);
+    /* Efeito de vidro */
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .header .logo {
     width: 90px;
-    /* Um pouco maior para destaque */
     height: auto;
+    transition: transform 0.3s ease;
+}
+
+.header .logo:hover {
+    transform: rotate(-5deg);
 }
 
 /* --- BOTÕES (Padrão Dourado) --- */
@@ -109,28 +124,56 @@ p {
             #AE9249 100%);
 }
 
-/* --- HERO SECTION (A maior mudança) --- */
+/* --- HERO SECTION --- */
 .hero {
-    /* Removemos a imagem escura e usamos um gradiente claro e luxuoso */
-    background: linear-gradient(135deg, var(--cream-bg) 0%, var(--soft-beige) 100%);
-    padding: 8rem 2rem;
+    background: linear-gradient(135deg, var(--cream-bg) 0%, #fffbf0 100%);
+    padding: 10rem 2rem 8rem;
+    overflow: hidden;
+}
+
+/* Elemento Gráfico: Círculo Dourado Sutil */
+/* Elemento Gráfico: Círculo Dourado Giratório */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -150px;
+    /* Ajustado para aparecer mais */
+    right: -150px;
+    width: 500px;
+    /* Maior */
+    height: 500px;
+    border: 1px dashed var(--gold);
+    /* TRACEJADO para melhor visibilidade */
+    border-radius: 50%;
+    opacity: 0.9;
+    /* Um pouco mais visível */
+    z-index: 0;
+    animation: spin 60s linear infinite;
+    pointer-events: none;
+    /* Garante que não atrapalhe cliques */
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: 4.5rem;
     color: var(--gold);
-    /* Título principal em dourado */
     margin: 0 0 1.5rem 0;
-    /* Sombra de texto removida para um look mais limpo, ou use uma muito suave: */
-    /* text-shadow: 1px 1px 3px rgba(0,0,0,0.1); */
+    position: relative;
+    z-index: 1;
 }
 
 .hero p {
     font-size: 1.5rem;
     max-width: 700px;
-    margin: 0 auto;
+    margin: 0 auto 2.5rem;
     color: var(--navy-blue);
-    opacity: 1;
+    position: relative;
+    z-index: 1;
 }
 
 /* --- ABOUT SECTION --- */
@@ -138,23 +181,113 @@ p {
     background-color: var(--pure-white);
 }
 
+/* ELEMENTO GRÁFICO 2: Detalhe lateral na seção Sobre */
+.about::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 100px;
+    background-color: var(--gold);
+    opacity: 0.9;
+}
+
 .title {
     font-size: 3rem;
     color: var(--navy-blue);
-    /* Títulos de seção em azul marinho */
     margin-bottom: 2rem;
     position: relative;
     display: inline-block;
 }
 
-/* Adiciona um pequeno detalhe dourado abaixo dos títulos */
 .title::after {
     content: '';
     display: block;
-    width: 60px;
+    width: 0;
     height: 3px;
     background-color: var(--gold);
     margin: 1rem auto 0;
+    transition: width 0.5s ease;
+}
+
+/* Animação da linha do título quando ativo */
+.reveal.active .title::after {
+    width: 60px;
+}
+
+
+/* --- SEPARADOR TIPO FAIXA (RIBBON) --- */
+.bow-separator {
+    display: flex;
+    align-items: center;
+    /* Centraliza verticalmente a linha com o laço */
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    margin-top: -2.5rem;
+    /* Ajuste para sobrepor a seção anterior */
+    margin-bottom: 2rem;
+    padding: 0;
+    overflow: hidden;
+    /* Garante que não crie rolagem lateral */
+}
+
+/* As linhas da faixa (Esquerda e Direita) */
+.bow-separator::before,
+.bow-separator::after {
+    content: '';
+    display: block;
+    height: 1px;
+    /* Espessura da linha da faixa */
+    background-color: var(--gold);
+    /* Cor da linha */
+    flex-grow: 1;
+    /* Faz a linha esticar até a borda da tela */
+    opacity: 0.6;
+    /* Opacidade da linha */
+    box-shadow: 0 1px 2px rgba(207, 181, 59, 0.2);
+}
+
+/* Pequeno espaçamento para o laço não grudar na linha reta */
+.bow-separator::before {
+    margin-right: -2px;
+}
+
+.bow-separator::after {
+    margin-left: -2px;
+}
+
+/* O Laço Central */
+.bow-separator svg {
+    width: 120px;
+    /* Um pouco maior para ser o destaque da faixa */
+    min-width: 120px;
+    /* Garante que não amasse em telas pequenas */
+    height: auto;
+    fill: none;
+    stroke: var(--gold);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 4px 6px rgba(207, 181, 59, 0.2));
+    background-color: transparent;
+    /* Garante fundo transparente */
+    transition: transform 1s ease;
+}
+
+/* Animação */
+.bow-separator.reveal svg {
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.bow-separator.reveal.active svg {
+    transform: scale(1);
+    opacity: 1;
 }
 
 .about p {
@@ -166,106 +299,112 @@ p {
 /* --- SNEAK PEEK (Galeria) --- */
 .sneak-peek {
     background-color: var(--cream-bg);
-    /* Fundo levemente diferente para contraste */
 }
 
 .collection-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    /* Cards um pouco mais largos */
-    gap: 2.5rem;
+    gap: 3rem;
     max-width: 1200px;
-    margin: 3rem auto 0;
+    margin: 4rem auto 0;
 }
 
 .collection-item {
-    text-align: center;
-    /* Centralizado fica mais elegante para moda */
-    background: var(--pure-white);
-    padding: 1.5rem;
-    border-radius: 4px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    /* Sombra suave para destacar do fundo */
+    text-align: left;
+    background: transparent;
     transition: transform 0.3s ease;
 }
 
-.collection-item:hover {
-    transform: translateY(-5px);
+.img-container {
+    overflow: hidden;
+    /* Essencial para o efeito de zoom */
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
 }
 
 .collection-item img {
     width: 100%;
-    height: 450px;
-    /* Altura fixa para uniformizar as fotos */
+    height: 480px;
     object-fit: cover;
-    /* Garante que a imagem preencha o espaço sem distorcer */
-    border-radius: 2px;
-    margin-bottom: 1.5rem;
+    display: block;
+    transition: transform 0.6s ease;
+    /* Zoom suave */
+}
+
+.collection-item:hover img {
+    transform: scale(1.08);
+    /* Zoom in na imagem */
 }
 
 .collection-item h3 {
-    font-size: 1.6rem;
-    margin: 0 0 0.8rem 0;
+    font-size: 1.8rem;
+    margin: 0 0 0.5rem 0;
     color: var(--navy-blue);
 }
 
-/* --- CTA SECTION (Newsletter) --- */
+.collection-item p {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* --- CTA SECTION --- */
 .cta {
-    /* Fundo bege suave para destacar a área de inscrição sem ser pesado */
     background-color: var(--soft-beige);
-    border-top: 1px solid rgba(207, 181, 59, 0.2);
+    border-top: 1px solid rgba(207, 181, 59, 0.1);
+    position: relative;
 }
 
-.cta .title {
-    color: var(--navy-blue);
+/* ELEMENTO GRÁFICO 3: Quadrado decorativo no canto */
+.cta::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    border: 2px solid var(--gold);
+    transform: rotate(45deg);
+    /* Rotacionado para dar movimento */
+    opacity: 0.3;
 }
 
 .cta p {
     font-size: 1.3rem;
     max-width: 650px;
     margin: 0 auto 2.5rem;
-    color: var(--text-body);
 }
 
 .signup-form {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
-    /* Gap menor para os inputs ficarem juntos */
+    gap: 0;
     max-width: 550px;
     margin: 0 auto;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
 .signup-form input {
     flex-grow: 1;
-    padding: 1rem 1.2rem;
-    border: 1px solid #e0e0e0;
-    /* Borda cinza claro */
-    border-radius: 2px;
+    padding: 1rem 1.5rem;
+    border: 1px solid #ddd;
+    border-right: none;
+    border-radius: 2px 0 0 2px;
     font-family: 'Garamond', serif;
     font-size: 1.1rem;
-    background: var(--pure-white);
-    transition: border-color 0.3s ease;
-}
-
-.signup-form input:focus {
     outline: none;
-    border-color: var(--gold);
 }
 
 .signup-form button {
-    border-radius: 2px;
-    padding: 1rem 2rem;
-    /* O estilo base do botão já foi definido acima */
+    border-radius: 0 2px 2px 0;
+    margin: 0;
+    /* Remove margem para colar no input */
 }
 
 /* --- FOOTER --- */
 .footer {
     background-color: var(--pure-white);
-    /* Footer claro */
     padding: 4rem 2rem;
-    color: var(--navy-blue);
-    /* Texto escuro */
     border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -278,53 +417,29 @@ p {
 
 .social-links a {
     color: var(--navy-blue);
-    /* Ícones em azul marinho */
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .social-links a:hover {
     color: var(--gold);
-    /* Dourado no hover */
-    transform: scale(1.1);
+    transform: translateY(-5px) scale(1.1);
 }
 
-.social-links svg {
-    width: 24px;
-    height: 24px;
-    stroke-width: 1.5;
-    /* Ícones ligeiramente mais finos e elegantes */
-}
-
-.footer p {
-    font-size: 0.9rem;
-    color: var(--text-body);
-    opacity: 0.8;
-    margin: 0;
-}
-
-/* --- RESPONSIVO --- */
 @media (max-width: 768px) {
     .hero {
-        padding: 5rem 2rem;
+        padding: 8rem 1.5rem 4rem;
     }
 
     .hero h1 {
         font-size: 3rem;
     }
 
-    .hero p {
-        font-size: 1.2rem;
+    .hero::before {
+        width: 200px;
+        height: 200px;
     }
 
-    .title {
-        font-size: 2.5rem;
-    }
-
-    .collection-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* Uma coluna no mobile */
     .collection-item img {
         height: auto;
         max-height: 500px;
@@ -332,20 +447,19 @@ p {
 
     .signup-form {
         flex-direction: column;
+        gap: 1rem;
+        box-shadow: none;
     }
 
-    .signup-form input,
-    .signup-form button {
+    .signup-form input {
+        border-radius: 2px;
+        border: 1px solid #ddd;
         width: 100%;
         box-sizing: border-box;
     }
 
-    .header .logo {
-        width: 70px;
-    }
-
-    .store-button {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
+    .signup-form button {
+        border-radius: 2px;
+        width: 100%;
     }
 }

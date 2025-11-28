@@ -20,7 +20,7 @@
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero reveal">
             <h1>Elegância em Cores</h1>
             <p>Descubra a nova coleção. Fluidez, sofisticação e os tons vibrantes da estação, curados para a mulher
                 moderna.</p>
@@ -30,7 +30,7 @@
                 Acesso Antecipado</a>
         </section>
 
-        <section class="about">
+        <section class="about reveal">
             <h2 class="title">A Essência da Coleção</h2>
             <p>Nossa nova temporada celebra a feminilidade com uma paleta de cores refrescante e tecidos que abraçam o
                 movimento. Do tom menta suave ao azul vibrante, cada peça é desenhada com detalhes que fazem a
@@ -38,30 +38,52 @@
                 sofisticação.</p>
         </section>
 
+        <div class="bow-separator reveal">
+            <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+                <path d="M58 20 C58 18 62 18 62 20 C62 22 58 22 58 20 Z" fill="var(--gold)" fill-opacity="0.1" />
+
+                <path d="M0 20 C15 20 25 20 40 20" stroke-opacity="0" />
+                <path d="M58 20 C45 5 20 5 20 20 C20 35 45 30 58 21" />
+
+                <path d="M62 20 C75 5 100 5 100 20 C100 35 75 30 62 21" />
+
+                <path d="M59 22 C55 35 45 45 35 40" />
+                <path d="M61 22 C65 35 75 45 85 40" />
+            </svg>
+        </div>
+
         <section class="sneak-peek">
-            <h2 class="title">Destaques da Temporada</h2>
+            <h2 class="title reveal">Destaques da Temporada</h2>
             <div class="collection-grid">
-                <div class="collection-item">
-                    <img src="assets/img/roupas/bata-gravata-2.png" alt="Blusa de babados cor menta com laço">
+
+                <div class="collection-item reveal">
+                    <div class="img-container">
+                        <img src="assets/img/roupas/bata-gravata-2.png" alt="Blusa de babados cor menta com laço">
+                    </div>
                     <h3>Leveza Menta</h3>
                     <p>Blusa fluida com gola laço e detalhes em babados. A definição de elegância diurna.</p>
                 </div>
 
-                <div class="collection-item">
-                    <img src="assets/img/roupas/conjunto-colete-1.png" alt="Conjunto de alfaiataria azul claro">
-                    <h3>Alfaiataria Modernaaa</h3>
+                <div class="collection-item reveal">
+                    <div class="img-container">
+                        <img src="assets/img/roupas/conjunto-colete-1.png" alt="Conjunto de alfaiataria azul claro">
+                    </div>
+                    <h3>Alfaiataria Moderna</h3>
                     <p>Conjunto em tom azul céu com corte estruturado e silhueta contemporânea.</p>
                 </div>
 
-                <div class="collection-item">
-                    <img src="./assets/img/roupas/bata-lapela-1.webp" alt="Blusa amarela fluida com calça terracota">
+                <div class="collection-item reveal">
+                    <div class="img-container">
+                        <img src="./assets/img/roupas/bata-lapela-1.webp"
+                            alt="Blusa amarela fluida com calça terracota">
+                    </div>
                     <h3>Vibração Solar</h3>
                     <p>A combinação perfeita de tons quentes para iluminar sua produção com sofisticação.</p>
                 </div>
             </div>
         </section>
 
-        <section class="cta" id="cta-signup">
+        <section class="cta reveal" id="cta-signup">
             <h2 class="title">Entre para a Lista VIP</h2>
             <p>Seja a primeira a saber quando a coleção completa estiver disponível e receba um presente exclusivo de
                 lançamento.</p>
@@ -72,10 +94,9 @@
         </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer reveal">
         <div class="social-links">
-            <a href="https://www.instagram.com/daveniori.co/
-            " target="_blank" title="Instagram">
+            <a href="https://www.instagram.com/daveniori.co/" target="_blank" title="Instagram">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -100,6 +121,31 @@
         </div>
         <p>&copy; <?php echo date("Y"); ?> Daven & Iori. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+
+                // Se o elemento estiver visível na tela
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+                // NOVO: Se o elemento sair da tela (para baixo), remove a classe para animar de novo
+                else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        // Chama uma vez no carregamento para garantir que o topo já apareça
+        reveal();
+    </script>
 
 </body>
 
