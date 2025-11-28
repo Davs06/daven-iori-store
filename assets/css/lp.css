@@ -435,9 +435,19 @@ p {
         font-size: 3rem;
     }
 
+    /* Ajuste do círculo no mobile para ficar mais elegante e sutil */
     .hero::before {
-        width: 200px;
-        height: 200px;
+        width: 500px;
+        /* Aumentei para a curva ficar mais "aberta" */
+        height: 500px;
+        top: -250px;
+        /* Empurrei bem mais para cima */
+        right: -250px;
+        /* Empurrei bem mais para a direita */
+        opacity: 0.25;
+        /* Deixei mais transparente para não poluir */
+        border-width: 2px;
+        /* Linha um pouco mais fina no celular */
     }
 
     .collection-item img {
